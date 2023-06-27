@@ -25,9 +25,10 @@ public class LolController {
     public String loginForm() {
         return ("회원가입");
     }
+
     @GetMapping("/login")
-    public String login1(){
-        return("Email,Password");
+    public String login1() {
+        return ("Email,Password");
     }
 
 //    @PostMapping("/login")
@@ -43,16 +44,18 @@ public class LolController {
         memberService.register(memberDTO);
         return "login";
     }
+
     @PostMapping("/login")
-    public String login1(@RequestBody MemberDTO memberDTO, HttpSession session){
-        MemberDTO loginResult= memberService.login(memberDTO);
-        if (loginResult !=null){
-            session.setAttribute("loginEmail",loginResult.getMemberEmail());
+    public String login1(@RequestBody MemberDTO memberDTO, HttpSession session) {
+        MemberDTO loginResult = memberService.login(memberDTO);
+        if (loginResult != null) {
+            session.setAttribute("loginEmail", loginResult.getMemberEmail());
             return ("main");
-        }else{
+        } else {
             return ("login");
         }
     }
+}
 //        if (userInfo.getEmail().equals("hamin@naver.com"))
 //            return "잘못된 이메일";
 //
@@ -134,27 +137,27 @@ public class LolController {
 //
 //
 //}
+//return//
+//     class  Test {
+//        String name;
+//        String email;
 //
-     class  Test {
-        String name;
-        String email;
-
-        public String getEmail() {
-            return email;
-
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-    }
-}
-
+//        public String getEmail() {
+//            return email;
+//
+//        }
+//
+//        public void setEmail(String email) {
+//            this.email = email;
+//        }
+//
+//        public String getName() {
+//            return name;
+//        }
+//
+//        public void setName(String name) {
+//            this.name = name;
+//        }
+//    }
+//}
+//
